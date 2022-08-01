@@ -1,0 +1,40 @@
+version: '3'
+services:
+
+  xserver:
+    image: debian:server
+    container_name: server
+    build: ./server
+    network_mode: host
+    volumes:
+      - shared:/mcookie/
+    environment:
+      - DISPLAY=:83
+      - DEPTH=24
+      - GEOMETRY=1366x768
+      - VIEWONLY
+      - VNCPASSWD
+
+  xclient:
+    image: debian:client
+    container_name: client
+    build: ./client
+
+  app:
+    image: debian:app
+    container_name: app
+    build: ./app
+    network_mode: host
+    privileged: True
+    environment:
+      - DISPLAY=:83
+      - GEOMETRY=1366x768
+    volumes: 
+      - shared:/mcookie/
+    depends_on:
+      - client
+      - server
+
+volumes:
+  shared:
+
