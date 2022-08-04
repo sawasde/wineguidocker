@@ -1,4 +1,5 @@
 # Log files and folders
-
 *.log*
 
+# virtual environments
+.env

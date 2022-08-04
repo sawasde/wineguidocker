@@ -29,6 +29,7 @@ services:
     environment:
       - DISPLAY=:83
       - GEOMETRY=1366x768
+      - EXECUTABLE=notepad.exe
     volumes: 
       - shared:/mcookie/
     depends_on:

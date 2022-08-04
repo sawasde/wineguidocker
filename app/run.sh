@@ -10,4 +10,4 @@ while read cookie; do
 done < /mcookie/cookies.txt
 
 # Start MetaTrader
-wine explorer /desktop=L4D2,"$GEOMETRY" terminal.exe
+wine explorer /desktop=L4D2,"$GEOMETRY" "$EXECUTABLE"
