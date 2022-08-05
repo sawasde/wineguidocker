@@ -1,30 +1,37 @@
-version: '3'
 services:
 
-  xserver:
+  server:
     image: debian:server
     container_name: server
-    build: ./server
-    network_mode: host
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    #network_mode: host
     volumes:
       - shared:/mcookie/
     environment:
       - DISPLAY=:83
       - DEPTH=24
       - GEOMETRY=1366x768
-      - VIEWONLY
-      - VNCPASSWD
+      - VIEWONLY=false
+      - VNCPASSWD=1234
+    ports:
+      - 5983:5983
 
-  xclient:
+  client:
     image: debian:client
     container_name: client
-    build: ./client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
 
   app:
     image: debian:app
     container_name: app
-    build: ./app
-    network_mode: host
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    #network_mode: host
     privileged: True
     environment:
       - DISPLAY=:83

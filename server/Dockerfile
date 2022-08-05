@@ -1,7 +1,7 @@
 # Dockerfile to run the X-VNC-Server
 # Debian linux image
 
-FROM debian:stretch
+FROM debian:bullseye
 MAINTAINER @alturiano <https://alturiano.com>
 
 # Environment variables
@@ -33,6 +33,11 @@ ENV GEOMETRY 800x600
 # The entrypoint script
 COPY run.sh $HOME/run.sh
 RUN chmod +x $HOME/run.sh
+
+#################################### TESTING
+RUN apt-get install net-tools 
+RUN apt-get install -y nmap
+#################################### TESTING
 
 # Deploy
 USER $USER

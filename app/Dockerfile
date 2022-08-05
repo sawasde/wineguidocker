@@ -1,7 +1,7 @@
 # Dockerfile to run MetaTrader with wine
-# xclient debian image
+# client debian image
 
-FROM debian:xclient
+FROM debian:client
 MAINTAINER @alturiano <https://alturiano.com>
 
 # Environment variables
@@ -17,22 +17,20 @@ RUN apt install -y --install-recommends --assume-yes wine
 # Install tools
 RUN apt install -y libx11-dev libxinerama-dev libxtst-dev openssl git
 
-# Install xdotool to work with tightvnc
-#RUN apt install -y  build-essential
-#RUN git clone https://github.com/jordansissel/xdotool.git
-#RUN cd xdotool \
-# && git checkout edbbb7a8f664ceacbb2cffbe8ee4f5a26b5addc8 \
-# && make install
-
 # Wine environment (no mono and gecko)
 ENV WINEDLLOVERRIDES="mscoree,mshtml="
 
 # Copy MetaTrader Folder
-COPY mt5 $HOME
+COPY bin $HOME
 
 # The entrypoint script
 COPY run.sh $HOME/run.sh
 RUN chmod +x $HOME/run.sh
+
+#################################### TESTING
+RUN apt-get install net-tools 
+RUN apt-get install -y nmap
+#################################### TESTING
 
 # Deploy
 USER $USER
