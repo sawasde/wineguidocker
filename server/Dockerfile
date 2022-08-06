@@ -34,11 +34,6 @@ ENV GEOMETRY 800x600
 COPY run.sh $HOME/run.sh
 RUN chmod +x $HOME/run.sh
 
-#################################### TESTING
-RUN apt-get install net-tools 
-RUN apt-get install -y nmap
-#################################### TESTING
-
 # Deploy
 USER $USER
 WORKDIR $HOME
