@@ -6,7 +6,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    #network_mode: host
+    network_mode: host
     volumes:
       - shared:/mcookie/
     environment:
@@ -15,8 +15,6 @@ services:
       - GEOMETRY=1366x768
       - VIEWONLY=false
       - VNCPASSWD=1234
-    ports:
-      - 5983:5983
 
   client:
     image: debian:client
@@ -31,7 +29,7 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
-    #network_mode: host
+    network_mode: host
     privileged: True
     environment:
       - DISPLAY=:83

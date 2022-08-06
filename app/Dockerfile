@@ -20,9 +20,6 @@ RUN apt install -y libx11-dev libxinerama-dev libxtst-dev openssl git
 # Wine environment (no mono and gecko)
 ENV WINEDLLOVERRIDES="mscoree,mshtml="
 
-# Copy MetaTrader Folder
-COPY bin $HOME
-
 # The entrypoint script
 COPY run.sh $HOME/run.sh
 RUN chmod +x $HOME/run.sh
