@@ -24,6 +24,9 @@ ENV WINEDLLOVERRIDES="mscoree,mshtml="
 COPY run.sh $HOME/run.sh
 RUN chmod +x $HOME/run.sh
 
+# Copy Binary file
+COPY bin $HOME/bin
+
 # Deploy
 USER $USER
 WORKDIR $HOME
