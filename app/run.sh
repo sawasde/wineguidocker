@@ -10,6 +10,4 @@ while read cookie; do
 done < /mcookie/cookies.txt
 
 # Start MetaTrader
-wine explorer /desktop=L4D2,1366x768 "bin/$EXECUTABLE"
-#wine explorer /desktop=L4D2,"$GEOMETRY" "npp.7.8.bin/$EXECUTABLE"
-# wine explorer /desktop=L4D2,1366x768 "npp.7.8.bin/notepad++.exe"
+wine explorer /desktop=L4D2,"$GEOMETRY" "bin/$EXECUTABLE"
