@@ -9,5 +9,5 @@ while read cookie; do
   xauth add $cookie
 done < /mcookie/cookies.txt
 
-# Start Application
+# Start Application. e.g wine
 wine explorer /desktop=L4D2,"$GEOMETRY" "bin/$EXECUTABLE"
