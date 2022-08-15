@@ -19,13 +19,13 @@ This project is using wine **notepad++.exe** as a default GUI desktop applicatio
 
 1. On repository root, build and run the docker containers:
 
-  docker-compose up --build
+       docker-compose up --build
 
 This will launch the **server** container as well as the desktop app. Wait until all services are ready.
 
 2. Then access the application via **vncviewer**. by default the server is running on port 5983, you can change the port on `docker-compose.yml` **DISPLAY** environment variable to run the service on port **59xx**
 
-  vncviewer 127.0.0.1::5983
+       vncviewer 127.0.0.1::5983
 
 It will ask for password, type the same password as `docker-compose.yml` **VNCPASSWD** environment variable.
 
