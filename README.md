@@ -5,6 +5,8 @@
 
 Access docker containers via GUI (Graphical User Interface). Now you can view a desktop application running on any container. Graphical access to wine desktop application on docker containers.
 
+<img width="675" alt="2022-08-08 12_37_23-Ubuntu 64-bit - VMware Workstation 16 Player (Non-commercial use only)" src="https://user-images.githubusercontent.com/22453747/184756240-cf07a167-c36a-4c6c-97cf-6ca828586445.png">
+
 # Requirements
 
  - Linux machine. **Preferably** debian-based (Does not work on windows machines `as network_mode: host` is needed)
