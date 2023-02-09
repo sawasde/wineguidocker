@@ -1,7 +1,7 @@
 # Dockerfile to run a x-client application in the x-server
 # Debian linux image
 
-FROM debian:bullseye
+FROM debian:11
 MAINTAINER @alturiano <https://alturiano.com>
 
 # Environment variables
