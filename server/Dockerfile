@@ -1,7 +1,7 @@
 # Dockerfile to run the X-VNC-Server
 # Debian linux image
 
-FROM debian:bullseye
+FROM debian:11
 MAINTAINER @alturiano <https://alturiano.com>
 
 # Environment variables
